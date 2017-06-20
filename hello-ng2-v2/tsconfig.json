@@ -1,0 +1,21 @@
+{
+	"files": [
+		"main.ts",
+		"index.ts"
+	],
+	"compilerOptions": {
+		"lib": ["dom", "es2016"],
+		"types" : ["node"],
+		"outDir": ".",
+		"experimentalDecorators": true,
+		"allowUnreachableCode": true,
+		"noUnusedLocals": false,
+		"declaration": false,
+		"removeComments": true,
+		"noImplicitAny": false,
+		"allowJs": false,
+		"sourceMap": false,
+		"newLine": "CRLF",
+		"target": "es5"
+	}
+}
