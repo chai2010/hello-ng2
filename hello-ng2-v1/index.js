@@ -21,7 +21,7 @@ var MainComponent = (function () {
 MainComponent = __decorate([
     ngCore.Component({
         selector: 'my-app',
-        template: "\n\t\t<h1>\u4F60\u597D, {{name}}</h1>\n\t",
+        template: "\n\t\t<h1>\u4F60\u597D, {{name}}! - V1</h1>\n\t",
         styles: [
             "h1 {\n\t\t\tcolor: #369;\n\t\t\tfont-family: Arial, Helvetica, sans-serif;\n\t\t\tfont-size: 250%;\n\t\t}",
         ],

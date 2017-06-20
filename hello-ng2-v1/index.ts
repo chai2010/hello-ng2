@@ -14,7 +14,7 @@ import * as ngPlatformBrowserDynamic from '@angular/platform-browser-dynamic'
 @ngCore.Component({
 	selector: 'my-app',
 	template: `
-		<h1>你好, {{name}}</h1>
+		<h1>你好, {{name}}! - V1</h1>
 	`,
 	styles: [
 		`h1 {
