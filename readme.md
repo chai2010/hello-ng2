@@ -3,7 +3,7 @@
 执行流程:
 
 - `npm install`
-- `./node_module/.bin/electron .`
+- `./node_module/.bin/electron hello-ng2-v1`
 
 ## 问题
 
