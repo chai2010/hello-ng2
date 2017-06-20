@@ -9,7 +9,7 @@ let win: Electron.BrowserWindow = null
 
 function createWindow() {
 	win = new electron.BrowserWindow({width: 800, height: 600})
-	win.loadURL(`file://${__dirname}/../index.html`)
+	win.loadURL(`file://${__dirname}/index.html`)
 	win.webContents.openDevTools()
 
 	win.on('closed', () => { win = null })

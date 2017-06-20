@@ -7,27 +7,27 @@ import 'core-js/es6/reflect'
 import 'core-js/es7/reflect'
 import 'zone.js/dist/zone'
 
-import { NgModule, Component } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
+import * as ngCore                   from '@angular/core'
+import * as ngPlatformBrowser        from '@angular/platform-browser'
+import * as ngPlatformBrowserDynamic from '@angular/platform-browser-dynamic'
 
-@Component({
+@ngCore.Component({
 	selector: 'my-app',
 	template: `<h1>你好, {{name}}</h1>`
 })
-export class AppComponent {
+export class MainComponent {
 	name = '世界'
 }
 
-@NgModule({
-	imports: [ BrowserModule ],
-	declarations: [ AppComponent ],
-	bootstrap: [ AppComponent ]
+@ngCore.NgModule({
+	imports: [ ngPlatformBrowser.BrowserModule ],
+	declarations: [ MainComponent ],
+	bootstrap: [ MainComponent ],
 })
-export class AppModule {
+export class MainModule {
 	//
 }
 
 export function main() {
-	platformBrowserDynamic().bootstrapModule(AppModule)
+	ngPlatformBrowserDynamic.platformBrowserDynamic().bootstrapModule(MainModule)
 }

@@ -9,36 +9,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("core-js/es6/reflect");
 require("core-js/es7/reflect");
 require("zone.js/dist/zone");
-var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
-var AppComponent = (function () {
-    function AppComponent() {
+var ngCore = require("@angular/core");
+var ngPlatformBrowser = require("@angular/platform-browser");
+var ngPlatformBrowserDynamic = require("@angular/platform-browser-dynamic");
+var MainComponent = (function () {
+    function MainComponent() {
         this.name = '世界';
     }
-    return AppComponent;
+    return MainComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
+MainComponent = __decorate([
+    ngCore.Component({
         selector: 'my-app',
         template: "<h1>\u4F60\u597D, {{name}}</h1>"
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-var AppModule = (function () {
-    function AppModule() {
+], MainComponent);
+exports.MainComponent = MainComponent;
+var MainModule = (function () {
+    function MainModule() {
     }
-    return AppModule;
+    return MainModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [AppComponent],
-        bootstrap: [AppComponent]
+MainModule = __decorate([
+    ngCore.NgModule({
+        imports: [ngPlatformBrowser.BrowserModule],
+        declarations: [MainComponent],
+        bootstrap: [MainComponent],
     })
-], AppModule);
-exports.AppModule = AppModule;
+], MainModule);
+exports.MainModule = MainModule;
 function main() {
-    platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(AppModule);
+    ngPlatformBrowserDynamic.platformBrowserDynamic().bootstrapModule(MainModule);
 }
 exports.main = main;

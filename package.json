@@ -4,7 +4,7 @@
   "description": "hello-ng2",
   "author": "chaishushan@gmail.com",
   "version": "1.0.0",
-  "main": "dist/main.js",
+  "main": "main.js",
   "scripts": {
     "preinstall": "",
     "postinstall": "",
@@ -23,7 +23,9 @@
     "zone.js": "^0.8.12"
   },
   "devDependencies": {
+    "@types/node": "^8.0.0",
     "benchmark": "^2.1.4",
+    "electron": "^1.7.2",
     "jake": "^8.0.15",
     "nodeunit": "^0.11.0",
     "typescript": "^2.3.2"
