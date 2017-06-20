@@ -1,14 +1,12 @@
 {
 	"files": [
 		"main.ts",
-		"index.ts",
-		"app/app.component.ts",
-		"app/app.module.ts"
+		"index.ts"
 	],
 	"compilerOptions": {
 		"lib": ["dom", "es2016"],
 		"types" : ["node"],
-		"outDir": "./dist",
+		"outDir": ".",
 		"experimentalDecorators": true,
 		"allowUnreachableCode": true,
 		"noUnusedLocals": false,
