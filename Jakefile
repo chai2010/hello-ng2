@@ -4,8 +4,6 @@
 
 // jake -T
 // jake -h
-// jake run page=index.html debug=true
-// jake run[arg1,arg2,...] page=index.html debug=true
 
 const fs = require('fs')
 const child_process = require('child_process')
