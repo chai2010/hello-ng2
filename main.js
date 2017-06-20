@@ -8,14 +8,19 @@ function createWindow() {
     win.webContents.openDevTools();
     win.on('closed', function () { win = null; });
 }
-electron.app.on('ready', createWindow);
-electron.app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') {
-        electron.app.quit();
-    }
-});
-electron.app.on('activate', function () {
-    if (win === null) {
+function main() {
+    electron.app.on('ready', function () {
         createWindow();
-    }
-});
+    });
+    electron.app.on('activate', function () {
+        createWindow();
+    });
+    electron.app.on('window-all-closed', function () {
+        if (process.platform !== 'darwin') {
+            electron.app.quit();
+        }
+    });
+}
+if (require.main === module) {
+    main();
+}

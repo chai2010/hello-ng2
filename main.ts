@@ -15,17 +15,21 @@ function createWindow() {
 	win.on('closed', () => { win = null })
 }
 
-electron.app.on('ready', createWindow)
-
-electron.app.on('window-all-closed', () => {
-	if (process.platform !== 'darwin') {
-		electron.app.quit()
-	}
-})
-
-electron.app.on('activate', () => {
-	if (win === null) {
+function main() {
+	electron.app.on('ready', () => {
 		createWindow()
-	}
-})
+	})
+	electron.app.on('activate', () => {
+		createWindow()
+	})
+	electron.app.on('window-all-closed', () => {
+		if(process.platform !== 'darwin') {
+			electron.app.quit()
+		}
+	})
+}
+
+if(require.main === module) {
+	main()
+}
 
