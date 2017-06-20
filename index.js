@@ -21,7 +21,8 @@ var MainComponent = (function () {
 MainComponent = __decorate([
     ngCore.Component({
         selector: 'my-app',
-        template: "<h1>\u4F60\u597D, {{name}}</h1>"
+        template: "<h1>\u4F60\u597D, {{name}}</h1>",
+        styles: ["h1 { color: rgb(255,0,0); }"],
     })
 ], MainComponent);
 exports.MainComponent = MainComponent;

@@ -8,9 +8,8 @@
   "scripts": {
     "preinstall": "",
     "postinstall": "",
-    "test": "jake test",
-    "pack": "jake pack",
-    "start": "electron ."
+    "build": "jake build",
+    "start": "jake"
   },
   "dependencies": {
     "@angular/common": "^4.2.3",

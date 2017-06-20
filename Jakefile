@@ -6,12 +6,39 @@
 // jake -h
 
 const fs = require('fs')
+const path = require('path')
 const child_process = require('child_process')
+
+const tscPath = (function() {
+	if(process.platform == 'win32') {
+		return path.join(__dirname, 'node_modules', '.bin', 'tsc.cmd')
+	} else {
+		return path.join(__dirname, 'node_modules', '.bin', 'tsc')
+	}
+})()
+
+const electronPath = (function() {
+	if(process.platform == 'win32') {
+		return path.join(__dirname, 'node_modules', '.bin', 'electron.cmd')
+	} else {
+		return path.join(__dirname, 'node_modules', '.bin', 'electron')
+	}
+})()
 
 desc('默认任务')
 task('default', {async: true}, function() {
 	let cmds = [
-		'electron .',
+		`${electronPath} .`,
+	]
+	jake.exec(cmds, {printStdout: true, printStderr: true}, function() {
+		complete()
+	})
+})
+
+desc('编译TypeScript')
+task('build', {async: true}, function() {
+	let cmds = [
+		tscPath,
 	]
 	jake.exec(cmds, {printStdout: true, printStderr: true}, function() {
 		complete()

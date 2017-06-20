@@ -13,7 +13,8 @@ import * as ngPlatformBrowserDynamic from '@angular/platform-browser-dynamic'
 
 @ngCore.Component({
 	selector: 'my-app',
-	template: `<h1>你好, {{name}}</h1>`
+	template: `<h1>你好, {{name}}</h1>`,
+	styles: [`h1 { color: rgb(255,0,0); }`],
 })
 export class MainComponent {
 	name = '世界'
