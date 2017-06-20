@@ -9,6 +9,14 @@ const fs = require('fs')
 const path = require('path')
 const child_process = require('child_process')
 
+const ngPath = (function() {
+	if(process.platform == 'win32') {
+		return path.join(__dirname, 'node_modules', '.bin', 'ng.cmd')
+	} else {
+		return path.join(__dirname, 'node_modules', '.bin', 'ng')
+	}
+})()
+
 const tscPath = (function() {
 	if(process.platform == 'win32') {
 		return path.join(__dirname, 'node_modules', '.bin', 'tsc.cmd')
