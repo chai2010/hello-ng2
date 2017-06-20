@@ -1,6 +1,8 @@
 {
 	"files": [
 		"main.ts",
+		"main.module.ts",
+		"main.component.ts",
 		"index.ts"
 	],
 	"compilerOptions": {
