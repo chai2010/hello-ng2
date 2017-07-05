@@ -1,5 +1,9 @@
 # Angular2 & Electron 示例
 
+入门教程:
+
+- [极简的Angular2示例, Electron环境运行](hello-ng2-v1)
+
 执行流程:
 
 - `npm install`
