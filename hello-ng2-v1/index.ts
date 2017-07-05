@@ -2,41 +2,34 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// fork from polyfills.ts
-import 'core-js/es6/reflect'
-import 'core-js/es7/reflect'
-import 'zone.js/dist/zone'
+import * as fs from 'fs'
+import * as electron from 'electron'
 
-import * as ngCore                   from '@angular/core'
-import * as ngPlatformBrowser        from '@angular/platform-browser'
-import * as ngPlatformBrowserDynamic from '@angular/platform-browser-dynamic'
+let win: Electron.BrowserWindow = null
 
-@ngCore.Component({
-	selector: 'my-app',
-	template: `
-		<h1>你好, {{name}}! - V1</h1>
-	`,
-	styles: [
-		`h1 {
-			color: #369;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 250%;
-		}`,
-	],
-})
-export class MainComponent {
-	name = '世界'
+function createWindow() {
+	win = new electron.BrowserWindow({width: 800, height: 600})
+	win.loadURL(`file://${__dirname}/demo.html`)
+	win.webContents.openDevTools()
+
+	win.on('closed', () => { win = null })
 }
 
-@ngCore.NgModule({
-	imports: [ ngPlatformBrowser.BrowserModule ],
-	declarations: [ MainComponent ],
-	bootstrap: [ MainComponent ],
-})
-export class MainModule {
-	//
+function main() {
+	electron.app.on('ready', () => {
+		createWindow()
+	})
+	electron.app.on('activate', () => {
+		createWindow()
+	})
+	electron.app.on('window-all-closed', () => {
+		if(process.platform !== 'darwin') {
+			electron.app.quit()
+		}
+	})
 }
 
-export function main() {
-	ngPlatformBrowserDynamic.platformBrowserDynamic().bootstrapModule(MainModule)
+if(require.main === module) {
+	main()
 }
+
