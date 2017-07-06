@@ -1,6 +1,8 @@
 
 # 极简的Angular2示例, Electron环境运行
 
+![](ng2-electron.png)
+
 Angular2本身提供了cli命令行工具, 可以生成完整的工程.
 
 但是命令行生成的工程太过复杂, 对于新学习Angular的用户会有太多的干扰.
@@ -13,7 +15,7 @@ Angular2本身提供了cli命令行工具, 可以生成完整的工程.
 
 通过以下命令安装:
 
-	install -g cnpm --registry=https://registry.npm.taobao.org
+	npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 完成后用 `cnpm` 代替 `npm` 命令.
 
@@ -216,6 +218,7 @@ emitDecoratorMetadata表示生成元信息也必须打开(元信息是反射特�
 
 ```
 cnpm install
+node_modules\.bin\tsc
 node_modules\.bin\electron .
 ```
 
